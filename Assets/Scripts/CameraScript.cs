@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject cam1ViewRoot;
+    public GameObject cam2ViewRoot;
+
+    private bool tVal = false;
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.C)){
+            cam1ViewRoot.SetActive(tVal);
+            cam2ViewRoot.SetActive(!tVal);
+            tVal = !tVal;
+        }
+    }
 }
