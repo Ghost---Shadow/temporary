@@ -47,11 +47,12 @@ public class RoboticArmScript : MonoBehaviour
     float mouseAxis = Input.GetAxis("Mouse Y");
     RotateMotor(arm2, mouseAxis * rotationSpeed * mouseSensitivityFactor);
 
-    float arm3Rotation = verticalAxis * rotationSpeed - mouseAxis * rotationSpeed;
-    RotateMotor(arm3, arm3Rotation);
+    //float arm3Rotation = verticalAxis * rotationSpeed - mouseAxis * rotationSpeed;
+    //RotateMotor(arm3, arm3Rotation);
 
     float mouseScrollAxis = Input.GetAxis("Mouse ScrollWheel");
-    RotateMotor(axialRotation, mouseScrollAxis * rotationSpeed);
+    //RotateMotor(axialRotation, mouseScrollAxis * rotationSpeed);
+    RotateMotor(arm3, mouseScrollAxis * rotationSpeed);
 
     float closingForce = Input.GetAxis("Fire1");
     PincerControl(.5f, closingForce);
