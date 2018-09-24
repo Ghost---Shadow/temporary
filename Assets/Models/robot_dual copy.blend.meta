@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 299f4fb8876f44c3dbc486c78cde2011
+guid: be2d6ffbfe64548c8b6bcc9555d2ee32
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -51,22 +51,6 @@ ModelImporter:
     2100006: motor_body
     2100008: grabbers
     2100010: pads
-    2300000: arm1
-    2300002: arm2
-    2300004: arm3
-    2300006: hand
-    2300008: pincer1
-    2300010: pincer2
-    2300012: //RootNode
-    2300014: turret
-    3300000: arm1
-    3300002: arm2
-    3300004: arm3
-    3300006: hand
-    3300008: pincer1
-    3300010: pincer2
-    3300012: //RootNode
-    3300014: turret
     4300000: base
     4300002: arm1
     4300004: arm2
@@ -122,7 +106,7 @@ ModelImporter:
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
-    importLights: 0
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
