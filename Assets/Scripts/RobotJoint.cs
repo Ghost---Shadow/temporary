@@ -14,6 +14,7 @@ public class RobotJoint : MonoBehaviour
     }
 
     public void ApplyAngle(float angle){
+        //angle = Mathf.Clamp(angle, MinAngle, MaxAngle);
         this.transform.localRotation = Quaternion.AngleAxis(angle, Axis);
     }
 

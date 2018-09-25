@@ -8,10 +8,12 @@ public class IK : MonoBehaviour {
     public float SamplingDistance = 1e-2f;
 
     public Transform targetTransform;
+    public GameObject debug;
 
     public RobotJoint[] Joints;
 
     private float[] angles;
+    private float myScale;
 
     void Start()
     {
@@ -19,12 +21,13 @@ public class IK : MonoBehaviour {
         for (int i = 0; i < angles.Length; i+=1){
             angles[i] = Joints[i].GetAngle();
         }
+        myScale = this.transform.localScale.x;
     }
 
     void FixedUpdate()
     {
         InverseKinematics(targetTransform.position, angles);
-        for (int i = 0; i < Joints.Length; i+=1){
+        for (int i = 0; i < Joints.Length - 1; i+=1){ // Skip the last joint
             Joints[i].ApplyAngle(angles[i]);
         }
     }
@@ -37,10 +40,11 @@ public class IK : MonoBehaviour {
         {
             // Rotates around a new axis
             rotation *= Quaternion.AngleAxis(angles[i - 1], Joints[i - 1].Axis);
-            Vector3 nextPoint = prevPoint + rotation * Joints[i].StartOffset;
+            Vector3 nextPoint = prevPoint + rotation * Joints[i].StartOffset * myScale;
 
             prevPoint = nextPoint;
         }
+        debug.transform.position = prevPoint; // TODO: debug
         return prevPoint;
     }
 

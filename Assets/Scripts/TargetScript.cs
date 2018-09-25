@@ -18,15 +18,15 @@ public class TargetScript : MonoBehaviour {
 
         Vector3 myPos = this.transform.position;
 
-        myPos += Vector3.up * vertical * speed;
-        myPos += Vector3.forward * horizontal * speed;
+        myPos += transform.up * vertical * speed;
+        myPos += - transform.forward * horizontal * speed;
 
         float rotateDirection = QPressed ? -1 : (EPressed ? 1 : 0);
 
         this.transform.position = myPos;
 
         // Rotate around the body
-        this.transform.RotateAround(this.transform.parent.position, Vector3.up, rotateDirection * speed);
+        this.transform.RotateAround(this.transform.parent.position, Vector3.up, rotateDirection * rotationSpeed);
 
         // The point should not stray too far
         Vector3 displacement = ( this.transform.position - actual.position);

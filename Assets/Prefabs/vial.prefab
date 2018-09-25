@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4956495202992562}
   - component: {fileID: 95475141458179380}
+  - component: {fileID: 136290261919144890}
   m_Layer: 0
   m_Name: vial
   m_TagString: Untagged
@@ -94,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1375027652211396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.653, y: 2.286, z: 1.354}
+  m_LocalPosition: {x: 2, y: 2.4, z: 0.5}
   m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4484527190508228}
@@ -117,7 +118,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2c7da78ce67ef4f5c8cf895c683a0212, type: 3}
+  - {fileID: 2100000, guid: 61b35fed44e2b4c43b3da0c5f085d14d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -204,3 +205,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &136290261919144890
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1375027652211396}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 21.176512
+  m_Direction: 1
+  m_Center: {x: 0, y: 10.088257, z: 0}
