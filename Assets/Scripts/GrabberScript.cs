@@ -5,6 +5,8 @@ using UnityEngine;
 public class GrabberScript : MonoBehaviour
 {
 
+  public Transform sceneRoot;
+
   private Transform grabbedTransform = null;
   private bool isGrabbed = false;
 
@@ -22,7 +24,7 @@ public class GrabberScript : MonoBehaviour
       }
       else
       {
-        grabbedTransform.parent = null;
+        grabbedTransform.parent = sceneRoot;
       }
     }
   }
@@ -38,7 +40,7 @@ public class GrabberScript : MonoBehaviour
     //Debug.Log("Exited");
     if (grabbedTransform != null && !isGrabbed)
     {
-      grabbedTransform.parent = null;
+      grabbedTransform.parent = sceneRoot;
       grabbedTransform = null;
     }
   }

@@ -7,7 +7,6 @@ public class TargetScript : MonoBehaviour {
     public float speed = 0.1f;
     public float rotationSpeed = 5f;
     public Transform actual;
-    public float distance = 1f;
 
     private void FixedUpdate()
     {
@@ -27,14 +26,5 @@ public class TargetScript : MonoBehaviour {
 
         // Rotate around the body
         this.transform.RotateAround(this.transform.parent.position, Vector3.up, rotateDirection * rotationSpeed);
-
-        // // The point should not stray too far
-        // Vector3 displacement = ( this.transform.position - actual.position);
-
-        // if(displacement.magnitude > distance){
-        //     displacement = displacement.normalized * distance;
-        // }
-
-        // this.transform.position = actual.position + displacement;
     }
 }
