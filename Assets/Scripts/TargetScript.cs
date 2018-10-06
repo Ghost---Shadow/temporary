@@ -28,13 +28,13 @@ public class TargetScript : MonoBehaviour {
         // Rotate around the body
         this.transform.RotateAround(this.transform.parent.position, Vector3.up, rotateDirection * rotationSpeed);
 
-        // The point should not stray too far
-        Vector3 displacement = ( this.transform.position - actual.position);
+        // // The point should not stray too far
+        // Vector3 displacement = ( this.transform.position - actual.position);
 
-        if(displacement.magnitude > distance){
-            displacement = displacement.normalized * distance;
-        }
+        // if(displacement.magnitude > distance){
+        //     displacement = displacement.normalized * distance;
+        // }
 
-        this.transform.position = actual.position + displacement;
+        // this.transform.position = actual.position + displacement;
     }
 }
