@@ -39,17 +39,18 @@ public class WaypointScript : MonoBehaviour
         yield return null;
       }
     }
-		grabber.isOveridden = false;
+    grabber.isOveridden = false;
+    currentWaypoint = null;
   }
 
   void Update()
   {
     foreach (Waypoint waypoint in waypoints)
     {
-      if (Input.GetKeyUp(waypoint.key))
+      if (Input.GetKeyUp(waypoint.key) && currentWaypoint == null)
       {
         currentWaypoint = waypoint;
-				grabber.isOveridden = true;
+        grabber.isOveridden = true;
         StartCoroutine("WaypointCoroutine");
       }
     }

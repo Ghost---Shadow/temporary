@@ -6,6 +6,7 @@ public class GrabberScript : MonoBehaviour
 {
 
   public Transform sceneRoot;
+  public Transform hand;
 
   private Transform grabbedTransform = null;
 
@@ -25,7 +26,7 @@ public class GrabberScript : MonoBehaviour
       //Debug.Log("isGrabbed "+ isGrabbed.ToString());
       if (isGrabbed)
       {
-        grabbedTransform.parent = this.transform;
+        grabbedTransform.parent = hand;
       }
       else
       {
