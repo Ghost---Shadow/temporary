@@ -8,12 +8,17 @@ public class GrabberScript : MonoBehaviour
   public Transform sceneRoot;
 
   private Transform grabbedTransform = null;
-  private bool isGrabbed = false;
+
+  public bool isOveridden = false;
+  public bool isGrabbed = false;
 
   // Update is called once per frame
   void Update()
   {
-    isGrabbed = Input.GetAxis("Fire1") > 0;
+    if (!isOveridden)
+    {
+      isGrabbed = Input.GetAxis("Fire1") > 0;
+    }
 
     if (grabbedTransform != null)
     {
