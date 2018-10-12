@@ -8,6 +8,8 @@ public class MicroscopeUIScript : MonoBehaviour
 
   public int panSpeed = 1000;
 
+  public bool malaria = false;
+
   public GameObject blueCircle;
   public GameObject yellowCircle;
   public GameObject counterUI;
@@ -70,7 +72,14 @@ public class MicroscopeUIScript : MonoBehaviour
       deadCells += 1;
     }
 
-    counterUI.GetComponent<Text>().text = "Alive: " + aliveCells + "\nDead:" + deadCells; //TODO: Performance
+    if (malaria)
+    {
+      counterUI.GetComponent<Text>().text = "Infected: " + aliveCells; //TODO: Performance
+    }
+    else
+    {
+      counterUI.GetComponent<Text>().text = "Alive: " + aliveCells + "\nDead:" + deadCells; //TODO: Performance
+    }
 
     if (Input.GetKeyUp(KeyCode.R))
     {

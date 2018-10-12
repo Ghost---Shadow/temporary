@@ -77,7 +77,13 @@ public class IK2D : MonoBehaviour
 
     Joint0.localRotation = Quaternion.AngleAxis(-jointAngle0, Vector3.right);
     Joint1.localRotation = Quaternion.AngleAxis(-jointAngle1, Vector3.right);
-    Hand.localRotation = Quaternion.AngleAxis(jointAngle0 + jointAngle1, Vector3.right);
+    float handAngle = jointAngle0 + jointAngle1;
+    if (Input.GetKey(KeyCode.F))
+    {
+      handAngle += 90;
+    }
+    Hand.localRotation = Quaternion.AngleAxis(handAngle, Vector3.right);
+
   }
 
 }
